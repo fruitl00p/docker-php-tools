@@ -1,6 +1,6 @@
 # PHP tools for easier docker based development
 
-This is a `simple` docker image for running various PHP tools from the CLI / IDE
+This is a `simple` docker image for running various PHP tools from the CLI / IDE.
 
 ## Usage
 
@@ -23,6 +23,10 @@ Go to your regular directory root of your app and choose what to do
 ``` docker run -it --rm -w /app -v $(pwd):/app kingsquare/php-tools:0.1 /composer ```
 
 ## Additional notes
+
+### Xdebug
+
+XDebug is loaded so no need to worry :)
 
 ### scripts
 One handy trick is to create a few run commands for even easier use

@@ -12,6 +12,8 @@
 FROM php:cli
 MAINTAINER Kingsquare <docker@kingsquare.nl>
 
+ENV TZ "Europe/Amsterdam"
+
 RUN apt-get update && \
 	apt-get install --no-install-recommends -qy git libmcrypt-dev zlib1g-dev && \
 	apt-get autoremove -yq --purge && \
@@ -21,7 +23,7 @@ RUN apt-get update && \
 	docker-php-ext-install mbstring && \
 	pecl install xdebug && \
 	echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \
-	echo "date.timezone = Europe/Amsterdam" > /usr/local/etc/php/conf.d/timezone.ini
+	echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini
 
 RUN curl -o /phpunit https://phar.phpunit.de/phpunit.phar && \
 	curl -o /phpcs https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && \
