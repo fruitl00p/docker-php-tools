@@ -9,7 +9,7 @@
 # The app should be mounted into /app to work
 #
 ###
-FROM php:cli
+FROM php:5.4-cli
 MAINTAINER Kingsquare <docker@kingsquare.nl>
 
 ENV TZ "Europe/Amsterdam"
